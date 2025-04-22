@@ -9,7 +9,9 @@
     "build:web": "ng build wc-consumer-web --configuration development",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "vite:build": "vite build",
+    "preview": "vite preview"
   },
   "private": true,
   "dependencies": {
@@ -38,6 +40,7 @@
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^19.2.0",
-    "typescript": "~5.7.2"
+    "typescript": "~5.7.2",
+    "vite": "^6.3.2"
   }
 }

@@ -114,3 +114,26 @@
         defineCustomElement(HelloWorldComponent, 'lib-hello-world');
         defineCustomElement(GoodbyeWorldComponent, 'lib-goodbye-world');
         });
+
+17. install vite - npm install vite --save-dev
+18 - create vite.config.js 
+        import { defineConfig } from 'vite'
+        import path from 'path'
+
+        export default defineConfig({
+        root: '.', // workspace root
+        build: {
+            outDir: 'vite-dist',
+            rollupOptions: {
+            input: path.resolve(__dirname, 'dist/wc-consumer-web/browser/index.html'),
+            output: {
+                entryFileNames: 'web.js',
+                assetFileNames: (chunk) =>
+                chunk.name && chunk.name.endsWith('.css') ? 'web.css' : chunk.name,
+            }
+            }
+        }
+        })
+19. add package scripts    
+    "vite:build": "vite build",
+    "preview": "vite preview"
