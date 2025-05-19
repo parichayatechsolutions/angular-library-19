@@ -1,0 +1,83 @@
+// Global Styles for Form
+.cam-review-summary-form-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: space-between;
+  
+    // Responsive Layout
+    @media (min-width: 768px) {
+      .cam-review-summary-form-item {
+        width: 32%; // 3 columns in the first row
+      }
+    }
+  
+    @media (max-width: 767px) {
+      .cam-review-summary-form-item {
+        width: 100%; // Full width for each element on smaller screens
+      }
+    }
+  }
+  
+  // Form Item Styling
+  .cam-review-summary-form-item {
+    display: flex;
+    flex-direction: column;
+  
+    .cam-review-summary-form-label {
+      font-size: 12px;
+      color: rgba(0, 0, 0, 0.6);
+      margin-bottom: 4px;
+    }
+  
+    .cam-review-summary-radio-container,
+    .cam-review-summary-input-container,
+    .cam-review-summary-datepicker-container,
+    .cam-review-summary-select-container {
+      border: 1px solid rgba(0, 0, 0, 0.23);
+      border-radius: 4px;
+      padding: 8px;
+      height: 100%;
+      align-content: center;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    .cam-review-summary-select-container{
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+  
+    .cam-review-summary-input-field,
+    .cam-review-summary-datepicker-input,
+    .cam-review-summary-select-input {
+      width: 100%;
+      font-size: 16px;
+      border: none;
+      outline: none;
+    }
+  
+    // Adjust radio group styling
+    .cam-review-summary-radio-group {
+      display: flex;
+      gap: 24px;
+    }
+  
+    // Fix for date picker icon in the same line as input field
+    .cam-review-summary-datepicker-container {
+      display: flex;
+      align-items: center; // Ensures input and icon are aligned in the same row
+      gap: 8px; // Adds space between input and icon
+    }
+  
+    .cam-review-summary-datepicker-toggle {
+      display: inline-flex;
+      align-items: center;
+    }
+  
+    // Style for the select dropdown
+    .cam-review-summary-select-input {
+      font-size: 16px;
+    }
+  }
+  

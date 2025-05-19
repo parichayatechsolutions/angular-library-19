@@ -1,1 +1,49 @@
-<lib-hello-world></lib-hello-world>
+<div class="cam-review-summary-form-container">
+    <div class="cam-review-summary-form-item">
+      <label class="cam-review-summary-form-label">TRMS Filed</label>
+      <div class="cam-review-summary-radio-container">
+        <mat-radio-group [(ngModel)]="yourAnswer" required aria-label="Do you agree?" class="cam-review-summary-radio-group">
+          <mat-radio-button value="yes">Yes</mat-radio-button>
+          <mat-radio-button value="no">No</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+  
+    <div class="cam-review-summary-form-item">
+      <label class="cam-review-summary-form-label">TRMS #</label>
+      <div class="cam-review-summary-input-container">
+        <input
+          [(ngModel)]="termsNumber"
+          placeholder="Enter terms number"
+          class="cam-review-summary-input-field"
+        />
+      </div>
+    </div>
+  
+    <div class="cam-review-summary-form-item">
+      <label class="cam-review-summary-form-label">TRMS Open Date</label>
+      <div class="cam-review-summary-datepicker-container">
+        <input
+          [matDatepicker]="picker"
+          [(ngModel)]="selectedDate"
+          placeholder="Choose a date"
+          class="cam-review-summary-datepicker-input"
+          matInput
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker" class="cam-review-summary-datepicker-toggle"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </div>
+    </div>
+  
+    <div class="cam-review-summary-form-item">
+      <label class="cam-review-summary-form-label">CAM Team Reviewer</label>
+      <div class="cam-review-summary-select-container">
+        <mat-select [(ngModel)]="selectedOption" placeholder="Choose an option" class="cam-review-summary-select-input">
+          <mat-option value="option1">Option 1</mat-option>
+          <mat-option value="option2">Option 2</mat-option>
+          <mat-option value="option3">Option 3</mat-option>
+        </mat-select>
+      </div>
+    </div>
+  </div>
+  

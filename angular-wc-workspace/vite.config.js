@@ -13,5 +13,18 @@ export default defineConfig({
           chunk.name && chunk.name.endsWith('.css') ? 'web.css' : chunk.name,
       }
     }
-  }
+  },
+  plugins: [
+    {
+      name: 'rename-index-html',
+      generateBundle(_, bundle) {
+        for (const fileName in bundle) {
+          if (fileName === 'index.html') {
+            bundle['home.html'] = { ...bundle[fileName] }
+            delete bundle[fileName]
+          }
+        }
+      }
+    }
+  ]
 })

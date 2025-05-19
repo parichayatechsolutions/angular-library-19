@@ -1,4 +1,3 @@
-import { platformBrowser } from '@angular/platform-browser';
 import { importProvidersFrom } from '@angular/core';
 import { bootstrapApplication } from '@angular/platform-browser';
 import { createCustomElement } from '@angular/elements';
