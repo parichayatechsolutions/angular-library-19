@@ -1,49 +1,232 @@
 <div class="cam-review-summary-form-container">
     <div class="cam-review-summary-form-item">
-      <label class="cam-review-summary-form-label">TRMS Filed</label>
-      <div class="cam-review-summary-radio-container">
-        <mat-radio-group [(ngModel)]="yourAnswer" required aria-label="Do you agree?" class="cam-review-summary-radio-group">
-          <mat-radio-button value="yes">Yes</mat-radio-button>
-          <mat-radio-button value="no">No</mat-radio-button>
-        </mat-radio-group>
-      </div>
+        <label class="cam-review-summary-form-label">TRMS Filed</label>
+        <div class="cam-review-summary-radio-container">
+            <mat-radio-group [(ngModel)]="yourAnswer" required aria-label="Do you agree?"
+                class="cam-review-summary-radio-group">
+                <mat-radio-button value="yes">Yes</mat-radio-button>
+                <mat-radio-button value="no">No</mat-radio-button>
+            </mat-radio-group>
+        </div>
     </div>
-  
+
     <div class="cam-review-summary-form-item">
-      <label class="cam-review-summary-form-label">TRMS #</label>
-      <div class="cam-review-summary-input-container">
-        <input
-          [(ngModel)]="termsNumber"
-          placeholder="Enter terms number"
-          class="cam-review-summary-input-field"
-        />
-      </div>
+        <label class="cam-review-summary-form-label">TRMS #</label>
+        <div class="cam-review-summary-input-container">
+            <input [(ngModel)]="termsNumber" placeholder="Enter terms number" class="cam-review-summary-input-field" />
+        </div>
     </div>
-  
+
     <div class="cam-review-summary-form-item">
-      <label class="cam-review-summary-form-label">TRMS Open Date</label>
-      <div class="cam-review-summary-datepicker-container">
-        <input
-          [matDatepicker]="picker"
-          [(ngModel)]="selectedDate"
-          placeholder="Choose a date"
-          class="cam-review-summary-datepicker-input"
-          matInput
-        />
-        <mat-datepicker-toggle matSuffix [for]="picker" class="cam-review-summary-datepicker-toggle"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-      </div>
+        <label class="cam-review-summary-form-label">TRMS Open Date</label>
+        <div class="cam-review-summary-datepicker-container">
+            <input [matDatepicker]="picker" [(ngModel)]="selectedDate" placeholder="Choose a date"
+                class="cam-review-summary-datepicker-input" matInput />
+            <mat-datepicker-toggle matSuffix [for]="picker"
+                class="cam-review-summary-datepicker-toggle"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </div>
     </div>
-  
+
     <div class="cam-review-summary-form-item">
-      <label class="cam-review-summary-form-label">CAM Team Reviewer</label>
-      <div class="cam-review-summary-select-container">
-        <mat-select [(ngModel)]="selectedOption" placeholder="Choose an option" class="cam-review-summary-select-input">
-          <mat-option value="option1">Option 1</mat-option>
-          <mat-option value="option2">Option 2</mat-option>
-          <mat-option value="option3">Option 3</mat-option>
-        </mat-select>
-      </div>
+        <label class="cam-review-summary-form-label">CAM Team Reviewer</label>
+        <div class="cam-review-summary-select-container">
+            <mat-select [(ngModel)]="selectedOption" placeholder="Choose an option"
+                class="cam-review-summary-select-input">
+                <mat-option value="option1">Option 1</mat-option>
+                <mat-option value="option2">Option 2</mat-option>
+                <mat-option value="option3">Option 3</mat-option>
+            </mat-select>
+        </div>
     </div>
-  </div>
-  
+</div>
+
+<div class="section-wrapper">
+    <!-- First Row -->
+    <div class="section-row">
+        <div class="section-column">
+            <label class="section-label">Agreement</label>
+            <p class="section-description">Do you agree?</p>
+        </div>
+        <div class="section-column">
+            <label class="section-label">Select Option</label>
+            <mat-radio-group [(ngModel)]="section1Answer">
+                <mat-radio-button value="yes">Yes</mat-radio-button>
+                <mat-radio-button value="no">No</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="section-column"></div>
+    </div>
+
+    <!-- Second Row (only if "Yes" selected) -->
+    <div class="section-row" *ngIf="section1Answer === 'yes'">
+        <div class="section-column">
+            <label class="section-label">Category</label>
+            <p class="section-description">Select A or B</p>
+        </div>
+        <div class="section-column">
+            <label class="section-label">Choose</label>
+            <mat-radio-group [(ngModel)]="section1SubAnswer">
+                <mat-radio-button value="a">A</mat-radio-button>
+                <mat-radio-button value="b">B</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="section-column">
+            <label class="section-label">Comments</label>
+            <textarea class="section-textarea" [(ngModel)]="section1Comment"
+                placeholder="Enter your comments"></textarea>
+        </div>
+    </div>
+</div>
+
+<div class="section-wrapper">
+    <!-- First Row -->
+    <div class="section-row">
+        <div class="section-column">
+            <label class="section-label">Agreement</label>
+            <p class="section-description">Do you agree?</p>
+        </div>
+        <div class="section-column">
+            <label class="section-label">Select Option</label>
+            <mat-radio-group [(ngModel)]="section1Answer">
+                <mat-radio-button value="yes">Yes</mat-radio-button>
+                <mat-radio-button value="no">No</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="section-column"></div>
+    </div>
+
+    <!-- Second Row (only if "Yes" selected) -->
+    <div class="section-row" *ngIf="section1Answer === 'yes'">
+        <div class="section-column">
+            <label class="section-label">Category</label>
+            <p class="section-description">Select A or B</p>
+        </div>
+        <div class="section-column">
+            <label class="section-label">Choose</label>
+            <mat-radio-group [(ngModel)]="section1SubAnswer">
+                <mat-radio-button value="a">A</mat-radio-button>
+                <mat-radio-button value="b">B</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="section-column">
+            <label class="section-label">Comments</label>
+            <textarea class="section-textarea" [(ngModel)]="section1Comment"
+                placeholder="Enter your comments"></textarea>
+        </div>
+    </div>
+</div>
+
+<div class="section-wrapper">
+    <!-- First Row -->
+    <div class="section-row">
+        <div class="section-column">
+            <label class="section-label">Agreement</label>
+            <p class="section-description">Do you agree?</p>
+        </div>
+        <div class="section-column">
+            <label class="section-label">Select Option</label>
+            <mat-radio-group [(ngModel)]="section1Answer">
+                <mat-radio-button value="yes">Yes</mat-radio-button>
+                <mat-radio-button value="no">No</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="section-column"></div>
+    </div>
+
+    <!-- Second Row (only if "Yes" selected) -->
+    <div class="section-row" *ngIf="section1Answer === 'yes'">
+        <div class="section-column">
+            <label class="section-label">Category</label>
+            <p class="section-description">Select A or B</p>
+        </div>
+        <div class="section-column">
+            <label class="section-label">Choose</label>
+            <mat-radio-group [(ngModel)]="section1SubAnswer">
+                <mat-radio-button value="a">A</mat-radio-button>
+                <mat-radio-button value="b">B</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="section-column">
+            <label class="section-label">Comments</label>
+            <textarea class="section-textarea" [(ngModel)]="section1Comment"
+                placeholder="Enter your comments"></textarea>
+        </div>
+    </div>
+</div>
+
+<div class="section-wrapper">
+    <!-- First Row -->
+    <div class="section-row">
+        <div class="section-column">
+            <label class="section-label">Agreement</label>
+            <p class="section-description">Do you agree?</p>
+        </div>
+        <div class="section-column">
+            <label class="section-label">Select Option</label>
+            <mat-radio-group [(ngModel)]="section1Answer">
+                <mat-radio-button value="yes">Yes</mat-radio-button>
+                <mat-radio-button value="no">No</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="section-column"></div>
+    </div>
+
+    <!-- Second Row (only if "Yes" selected) -->
+    <div class="section-row" *ngIf="section1Answer === 'yes'">
+        <div class="section-column">
+            <label class="section-label">Category</label>
+            <p class="section-description">Select A or B</p>
+        </div>
+        <div class="section-column">
+            <label class="section-label">Choose</label>
+            <mat-radio-group [(ngModel)]="section1SubAnswer">
+                <mat-radio-button value="a">A</mat-radio-button>
+                <mat-radio-button value="b">B</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="section-column">
+            <label class="section-label">Comments</label>
+            <textarea class="section-textarea" [(ngModel)]="section1Comment"
+                placeholder="Enter your comments"></textarea>
+        </div>
+    </div>
+</div>
+
+<div class="section-wrapper">
+    <!-- First Row -->
+    <div class="section-row">
+        <div class="section-column">
+            <label class="section-label">Agreement</label>
+            <p class="section-description">Do you agree?</p>
+        </div>
+        <div class="section-column">
+            <label class="section-label">Select Option</label>
+            <mat-radio-group [(ngModel)]="section1Answer">
+                <mat-radio-button value="yes">Yes</mat-radio-button>
+                <mat-radio-button value="no">No</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="section-column"></div>
+    </div>
+
+    <!-- Second Row (only if "Yes" selected) -->
+    <div class="section-row" *ngIf="section1Answer === 'yes'">
+        <div class="section-column">
+            <label class="section-label">Category</label>
+            <p class="section-description">Select A or B</p>
+        </div>
+        <div class="section-column">
+            <label class="section-label">Choose</label>
+            <mat-radio-group [(ngModel)]="section1SubAnswer">
+                <mat-radio-button value="a">A</mat-radio-button>
+                <mat-radio-button value="b">B</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div class="section-column">
+            <label class="section-label">Comments</label>
+            <textarea class="section-textarea" [(ngModel)]="section1Comment"
+                placeholder="Enter your comments"></textarea>
+        </div>
+    </div>
+</div>
